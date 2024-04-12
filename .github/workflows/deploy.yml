@@ -58,8 +58,6 @@ jobs:
 
       - name: Commit changes and push
         run: |
-          git config user.email "GitHub Actions"
-          git config user.name "github-actions@github.com"
           git add .
           git commit -m "Update build output"
           git push
