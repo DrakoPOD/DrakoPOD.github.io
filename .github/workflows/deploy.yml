@@ -44,6 +44,9 @@ jobs:
         run: |
           git rm -r * ':!.vitepress'
 
+      - name: Check if vitepress folder exists
+        run: ls
+
       - name: Copy build output
         run: |
           cp -R .vitepress/dist .
