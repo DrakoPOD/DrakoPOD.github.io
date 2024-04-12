@@ -46,7 +46,7 @@ jobs:
 
       - name: Check if vitepress folder exists
         run: |
-          git ls-files
+          ls ${{ github.workspace }}
 
       - name: Copy build output
         run: |
