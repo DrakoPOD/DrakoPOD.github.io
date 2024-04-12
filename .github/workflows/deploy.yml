@@ -35,19 +35,39 @@ jobs:
       - name: Build
         run: pnpm docs:build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Checkout main branch
+        uses: actions/checkout@v4
         with:
-          path: .vitepress/dist
+          ref: main
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Clear main branch
+        run: git rm -rf .
+
+      - name: Copy build output
+        run: |
+          cp -R .vitepress/dist/* .
+
+      - name: Commit changes and push
+        run: |
+          git config user.email "GitHub Actions"
+          git config user.name "github-actions@github.com"
+          git add .
+          git commit -m "Update build output"
+          git push
+
+  #     - name: Upload artifact
+  #       uses: actions/upload-pages-artifact@v3
+  #       with:
+  #         path: .vitepress/dist
+
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   name: Deploy
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
