@@ -42,7 +42,7 @@ jobs:
 
       - name: Clear main branch
         run: |
-          git rm -r * !(.vitepress)
+          git rm -r * ':!.vitepress'
 
       - name: Copy build output
         run: |
