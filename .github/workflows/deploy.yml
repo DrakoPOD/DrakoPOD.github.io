@@ -35,17 +35,28 @@ jobs:
       - name: Build
         run: pnpm docs:build
 
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: .vitepress/dist
+
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
           ref: main
 
-      - name: Check if vitepress folder exists
-        run: |
-          ls ${{ github.workspace }}
       - name: Clear main branch
         run: |
-          git rm -r . ':!.gitignore'
+          git rm -r .
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+
+      - name: List files
+        run: ls -a
 
       - name: Copy build output
         run: |
