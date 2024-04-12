@@ -42,14 +42,14 @@ jobs:
 
       - name: Clear main branch
         run: |
-          git rm -r * ':!.vitepress'
+          git rm -r . ':!.gitignore'
 
       - name: Check if vitepress folder exists
         run: ls
 
       - name: Copy build output
         run: |
-          cp -R .vitepress/dist .
+          cp -R '.vitepress/dist' .
 
       - name: Commit changes and push
         run: |
