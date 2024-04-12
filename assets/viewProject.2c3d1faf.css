@@ -1,1 +1,0 @@
-#page-content{display:grid;gap:2em;grid-template-columns:1fr 1fr;min-height:100%}.info-page{color:#fff}.info-page p{margin:15px 0}#page-content>div{padding:50px 0}@media (max-width: 780px){#page-content{grid-template-columns:1fr}}
