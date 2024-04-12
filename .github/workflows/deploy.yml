@@ -40,13 +40,12 @@ jobs:
         with:
           ref: main
 
-      - name: Clear main branch
-        run: |
-          git rm -r . ':!.gitignore'
-
       - name: Check if vitepress folder exists
         run: |
           ls ${{ github.workspace }}
+      - name: Clear main branch
+        run: |
+          git rm -r . ':!.gitignore'
 
       - name: Copy build output
         run: |
