@@ -63,6 +63,8 @@ jobs:
           git add .
           git commit -m "Update build output"
           git push
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
   #     - name: Upload artifact
   #       uses: actions/upload-pages-artifact@v3
