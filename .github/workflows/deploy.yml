@@ -45,7 +45,7 @@ jobs:
           git rm -r . ':!.gitignore'
 
       - name: Check if vitepress folder exists
-        run: ls
+        run: git ls-files --error-unmatch .vitepress
 
       - name: Copy build output
         run: |
