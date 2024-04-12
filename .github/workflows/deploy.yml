@@ -6,7 +6,7 @@ on:
       - dev
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BASE_PATH: ${{ github.event.repository.name }}
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
@@ -58,8 +57,10 @@ jobs:
 
       - name: Commit changes and push
         run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add .
-          git commit -m "Update build output"
+          git commit -m "Auto update portfolio"
           git push
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
