@@ -55,13 +55,6 @@ jobs:
         with:
           name: dist
 
-      - name: List files
-        run: ls -a
-
-      - name: Copy build output
-        run: |
-          cp -R '.vitepress/dist' .
-
       - name: Commit changes and push
         run: |
           git config user.email "GitHub Actions"
