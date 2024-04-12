@@ -45,7 +45,7 @@ jobs:
 
       - name: Copy build output
         run: |
-          cp -R .vitepress/dist/* .
+          cp -R .vitepress/dist .
 
       - name: Commit changes and push
         run: |
