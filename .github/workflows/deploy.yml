@@ -41,7 +41,9 @@ jobs:
           ref: main
 
       - name: Clear main branch
-        run: git rm -r *
+        run: |
+          ls
+          git rm -r *
 
       - name: Copy build output
         run: |
