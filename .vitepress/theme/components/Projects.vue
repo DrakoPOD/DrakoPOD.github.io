@@ -3,7 +3,7 @@ import { data as projects } from '../project.data'
 </script>
 
 <template>
-  <div class="project-section">
+  <div class="content-section">
     <p class="title">Projects</p>
     <div class="card-section-container">
       <div class="card" v-for="project in projects">
@@ -21,19 +21,4 @@ import { data as projects } from '../project.data'
   </div>
 </template>
 
-<style scoped>
-.project-section {
-  background: black;
-  height: 100vh;
-  overflow: hidden;
-  padding: 3rem;
-}
-
-.title {
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-</style>
+<style scoped></style>

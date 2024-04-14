@@ -4,7 +4,7 @@ import { data as experience } from '../experience.data'
 </script>
 
 <template>
-  <div class="experience-section">
+  <div class="content-section">
     <p class="title">Experience</p>
     <div class="card-section-container">
       <div class="card" v-for="exp in experience">
@@ -19,19 +19,4 @@ import { data as experience } from '../experience.data'
   </div>
 </template>
 
-<style scoped>
-.experience-section {
-  background: black;
-  height: 100vh;
-  overflow: hidden;
-  padding: 3rem;
-}
-
-.title {
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-</style>
+<style scoped></style>
