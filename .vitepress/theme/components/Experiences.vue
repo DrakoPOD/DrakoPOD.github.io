@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import CardGrid from './CardGrid.vue'
-import { data as projects } from '../project.data.ts'
+import { data as experience } from '../experience.data.ts'
 </script>
 
 <template>
-  <CardGrid :list="projects" />
+  <CardGrid :list="experience" />
 </template>

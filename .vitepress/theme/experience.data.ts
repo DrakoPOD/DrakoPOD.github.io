@@ -1,10 +1,12 @@
 import { createContentLoader } from 'vitepress';
 
 export interface Experience {
-  url: string;
   title: string;
   description: string;
   technologies: string[];
+  index?: number;
+  url?: string;
+  repo?: boolean;
 }
 
 declare const data: Experience[];
@@ -17,6 +19,7 @@ export default createContentLoader('experience/*.md', {
       title: frontmatter.title,
       description: frontmatter.description,
       technologies: frontmatter.technologies,
+      repo: false,
     }));
   },
 });

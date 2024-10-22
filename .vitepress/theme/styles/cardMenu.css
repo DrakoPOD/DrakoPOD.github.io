@@ -1,0 +1,70 @@
+.card-menu {
+  --hover-color: var(--cactus-100);
+  --text: var(--cactus-900);
+  --background: var(--cactus-50);
+  display: flex;
+  flex-direction: column;
+  background: var(--cactus-50);
+  width: 400px;
+  height: fit-content;
+  max-width: 90%;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-menu > ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px;
+  color: var(--text);
+}
+
+.card-item:hover[selected='false'] {
+  background: var(--cactus-100);
+}
+
+.card-item[selected='true'] {
+  --text: var(--cactus-50);
+  --background: var(--cactus-900);
+  background: var(--cactus-900);
+}
+.menu-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.menu-icon-arrow {
+  height: 24px;
+  width: 24px;
+  transition: all 0.2s linear;
+  transform: translate(-24px);
+  opacity: 0;
+}
+
+.card-item[selected='false'] .menu-icon-arrow {
+  fill: var(--cactus-50);
+}
+
+.card-item[selected='true'] .menu-icon-arrow {
+  fill: var(--text);
+  transform: translate(0px);
+  opacity: 1;
+}
+
+.card-item:hover[selected='false'] .menu-icon-arrow {
+  fill: var(--cactus-900);
+  transform: translate(0px);
+  opacity: 1;
+}
+
+.menu-icon > * {
+  fill: var(--text);
+}
