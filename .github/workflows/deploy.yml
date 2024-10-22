@@ -20,7 +20,7 @@ jobs:
       BASE_PATH: ${{ github.event.repository.name }}
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8.15.1
       - name: Setup Node
@@ -35,7 +35,7 @@ jobs:
         run: pnpm docs:build
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: .vitepress/dist
@@ -50,7 +50,7 @@ jobs:
           git rm -r .
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: dist
 
