@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const model = useState('view', () => 0)
+const model = await useState('view', () => 0)
 
 const items = [
   { icon: 'mdi:home', text: 'Home', value: 0 },
