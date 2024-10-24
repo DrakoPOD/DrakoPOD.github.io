@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-import { mdiArrowLeftBoldBox, mdiArrowRightBoldBox, mdiViewGrid, mdiWindowRestore, mdiGithub } from '@mdi/js'
-
-import Card from './Card.vue'
-
-
 interface Position {
   top: number
   left: number
@@ -67,9 +62,7 @@ const changeView = () => {
       <div class="grid-view" v-if="viewIsGrid">
         <div class="button-group">
           <button @click="changeView" class="button">
-            <svg class="button-icon" viewBox="0 0 24 24">
-              <path :d="mdiWindowRestore"></path>
-            </svg>
+            <Icon name="mdi:window-restore" class="button-icon" />
           </button>
         </div>
         <div class="card-grid">
@@ -82,19 +75,13 @@ const changeView = () => {
       <div v-else class="pile-view">
         <div class="button-group">
           <button @click="movePrev()" class="button">
-            <svg class="button-icon" viewBox="0 0 24 24">
-              <path :d="mdiArrowLeftBoldBox"></path>
-            </svg>
+            <Icon name="mdi:arrow-left-bold-box" class="button-icon" />
           </button>
           <button @click="changeView" class="button">
-            <svg class="button-icon" viewBox="0 0 24 24">
-              <path :d="mdiViewGrid"></path>
-            </svg>
+            <Icon name="mdi:view-grid" class="button-icon" />
           </button>
           <button @click="moveNext" class="button">
-            <svg class="button-icon" viewBox="0 0 24 24">
-              <path :d="mdiArrowRightBoldBox"></path>
-            </svg>
+            <Icon name="mdi:arrow-right-bold-box" class="button-icon" />
           </button>
         </div>
         <TransitionGroup name="pile" class="pile-card" tag="div">
