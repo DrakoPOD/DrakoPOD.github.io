@@ -7,7 +7,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
-  css: [...css.map((file) => `~/assets/css/${file}`)],
+  css: [
+    '~/assets/css/card.css',
+    '~/assets/css/cardMenu.css',
+    '~/assets/css/sections.css',
+    '~/assets/css/style.css',
+  ],
 
   modules: ['@nuxt/icon'],
 });
