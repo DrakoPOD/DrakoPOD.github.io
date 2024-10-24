@@ -32,6 +32,7 @@ home: true
   })
 </script>
 
+
 <div class="main-page">
   <div class="main-title">
     <svg class="icon" viewBox="0 0 24 24">
@@ -45,7 +46,9 @@ home: true
     <Transition name="content" mode="out-in">
       <div v-if="currentPage == 0">aaaaa</div>
       <div v-else-if="currentPage == 1" class="about">
-        <!--@include: ./sections/aboutMe.md-->
+<span v-pre>
+<!--@include: ./sections/aboutMe.md-->
+</span>
       </div>
       <div v-else-if="currentPage == 2">
        <Experience></Experience>
@@ -59,7 +62,6 @@ home: true
   <div class="main-content-mobile">
     <div></div>
     <div class="about">
-        <!--@include: ./sections/aboutMe.md-->
     </div>
     <div class="experience-section">
       <Experience></Experience>

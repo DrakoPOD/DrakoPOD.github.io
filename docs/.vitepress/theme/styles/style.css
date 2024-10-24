@@ -25,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'ProggyClean', monospace;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 :root {
@@ -54,7 +54,7 @@ body {
     grid-template-rows: auto 1fr;
     height: 100vh;
     gap: 2rem;
-    padding: 2rem;
+    padding: 10px;
   }
 
   .main-content-mobile {
@@ -95,7 +95,7 @@ body {
 .main-content {
   grid-area: content;
   height: 100%;
-  max-height: 712px;
+  max-height: 970px;
   max-width: 100%;
   position: relative;
   border: var(--cactus-900) 5px solid;

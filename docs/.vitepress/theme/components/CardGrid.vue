@@ -36,9 +36,9 @@ const container = computed(() => {
   for (let i = 0; i < tempExp.value.length && i < 4; i++) {
     exp.push({
       ...tempExp.value[i],
-      top: i * -50,
+      top: (4 - i) * 50,
       left: i * 20,
-      zIndex: tempExp.value.length - i
+      zIndex: 4 - i
     })
   }
 
@@ -65,23 +65,21 @@ const changeView = () => {
   <div class="cards-area">
     <Transition name="view" mode="out-in">
       <div class="grid-view" v-if="viewIsGrid">
+        <div class="button-group">
+          <button @click="changeView" class="button">
+            <svg class="button-icon" viewBox="0 0 24 24">
+              <path :d="mdiWindowRestore"></path>
+            </svg>
+          </button>
+        </div>
         <div class="card-grid">
           <Card v-for="exp, i in container" :key="exp.title" :title="exp.title" :description="exp.description"
             :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"></Card>
         </div>
-        <button @click="changeView" class="button">
-          <svg class="button-icon" viewBox="0 0 24 24">
-            <path :d="mdiWindowRestore"></path>
-          </svg>
-        </button>
+
       </div>
 
       <div v-else class="pile-view">
-
-        <TransitionGroup name="pile" class="pile-card" tag="div">
-          <Card v-for="exp, i in container" :key="exp.title" :title="exp.title" :description="exp.description"
-            :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"></Card>
-        </TransitionGroup>
         <div class="button-group">
           <button @click="movePrev()" class="button">
             <svg class="button-icon" viewBox="0 0 24 24">
@@ -99,6 +97,11 @@ const changeView = () => {
             </svg>
           </button>
         </div>
+        <TransitionGroup name="pile" class="pile-card" tag="div">
+          <Card v-for="exp, i in container" :key="exp.title" :title="exp.title" :description="exp.description"
+            :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"></Card>
+        </TransitionGroup>
+
       </div>
     </Transition>
   </div>
@@ -106,12 +109,15 @@ const changeView = () => {
 
 <style scoped>
 .cards-area {
+  display: flex;
   height: 100%;
+  align-items: center;
 }
 
 .pile-card {
-  height: 590px;
-  width: 620px;
+  top: -50px;
+  height: 650px;
+  width: 460px;
 }
 
 .button-icon {
@@ -125,7 +131,6 @@ const changeView = () => {
 
 .button-group {
   display: flex;
-  grid-area: buttons;
   justify-content: space-around;
   flex-direction: column;
   gap: 1rem;
@@ -134,6 +139,8 @@ const changeView = () => {
 
 .button {
   border: none;
+  width: 120px;
+  height: 120px;
   background-color: var(--cactus-100);
   box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
@@ -163,15 +170,15 @@ const changeView = () => {
 }
 
 .grid-view {
-  display: grid;
-  grid-template-areas: 'buttons cards';
-  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   height: 100%;
   gap: 1rem;
 }
 
 .card-grid {
-  grid-area: cards;
+  align-self: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -185,11 +192,10 @@ const changeView = () => {
 }
 
 .pile-view {
-  display: grid;
-  grid-template-areas: 'buttons cards';
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
   gap: 1rem;
 }
 
