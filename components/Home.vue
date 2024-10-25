@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineProps({
+  mobile: Boolean
+})
+
 const texts = ref<string[]>([])
 const currentText = ref<string>('')
 const queueText = [
@@ -40,9 +44,10 @@ onMounted(() => {
   <div class="home">
     <div class="text-area">
       <TransitionGroup name="slide" tag="ul">
-        <li key="one">----------------------------------------</li>
+        <li key="one" v-if="!mobile">----------------------------------------</li>
         <li v-for="text in texts" :key="text">$&gt; {{ text }}</li>
-        <li key="last">----------------------------------------</li>
+        <li key="last" v-if="!mobile">----------------------------------------</li>
+        <li v-else>-------------</li>
       </TransitionGroup>
 
       <div class="input-area">user@root&gt;{{ currentText }}<span class="blink-cursor">_</span> </div>

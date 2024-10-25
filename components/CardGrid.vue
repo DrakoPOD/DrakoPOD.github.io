@@ -7,6 +7,8 @@ interface Position {
   zIndex: number
 }
 
+
+
 interface DataCard {
   title: string
   description: string
@@ -165,6 +167,7 @@ const changeView = () => {
   flex-direction: row;
   flex-wrap: nowrap;
   height: 100%;
+  max-height: 90vh;
   gap: 1rem;
 }
 

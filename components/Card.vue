@@ -6,10 +6,10 @@ interface CardProps {
   imgUrl?: string
   description: string
   tags: string[]
-  top: number
-  left: number
-  zIndex: number
-  index: number
+  top?: number
+  left?: number
+  zIndex?: number
+  index?: number
 }
 
 const props = defineProps<CardProps>()

@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     '~/assets/css/style.css',
   ],
 
-  modules: ['@nuxt/icon'],
+  modules: ['@nuxt/icon', '@nuxtjs/device'],
 
   icon: {
     clientBundle: {

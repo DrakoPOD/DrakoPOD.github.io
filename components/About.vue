@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps({
+  mobile: Boolean
+})
+</script>
 
 <template>
-  <div class="about">
+  <div :class="mobile ? 'about-mobile' : 'about'">
     <p>I'm a front-end and back-end developer, I also have experience with microcontrollers. I consider myself a
       self-learner, able to quickly grasp new technologies and adapt to new situations.</p>
 
