@@ -2,8 +2,8 @@
 
 <template>
   <div class="main-page">
-    <AppHeader />
-    <CardMenu />
+    <AppHeader :mobile="true" />
+    <!-- <CardMenu /> -->
     <div class="main-content-mobile">
       <Home :mobile="true" />
       <About :mobile="true" />

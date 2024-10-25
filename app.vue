@@ -5,7 +5,6 @@ const { isMobile } = useDevice();
 <template>
   <ClientOnly>
     <div>
-      {{ isMobile }}
       <NuxtLayout :name="isMobile ? 'mobile' : 'default'">
 
       </NuxtLayout>
