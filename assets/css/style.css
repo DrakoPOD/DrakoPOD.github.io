@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica;
+}
+
+@font-face {
+  font-family: 'anonymous-pro';
+  src: url('/anonymous-pro/AnonymousPro-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'ProggyClean';
+  src: url('/ProggyCleanNerdFontMono-Regular.ttf');
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'ProggyClean', monospace;
+  font-size: 20px;
+}
+
+:root {
+  --cactus-50: #f3f6f3;
+  --cactus-100: #e4e9e2;
+  --cactus-200: #c7d4c6;
+  --cactus-300: #a0b69f;
+  --cactus-400: #769275;
+  --cactus-500: #577757;
+  --cactus-600: #405b41;
+  --cactus-700: #334934;
+  --cactus-800: #2a3b2b;
+  --cactus-900: #233124;
+  --cactus-950: #131b14;
+
+  --background-color: rgb(22, 22, 22);
+}
+
+@media (min-width: 768px) {
+  .main-page {
+    display: grid;
+    grid-template-areas:
+      'title title'
+      'menu content';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    gap: 2rem;
+    padding: 10px;
+  }
+
+  .main-content-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-menu {
+    display: none !important;
+  }
+
+  .main-content {
+    display: none !important;
+  }
+}
+
+.main-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  color: var(--cactus-900);
+  grid-area: title;
+  border-bottom: var(--cactus-900) 5px solid;
+  font-size: 1.5rem;
+}
+
+.main-title h1 {
+  font-size: 4rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.icon-title {
+  height: 4rem;
+  width: 4rem;
+}
+
+.main-title .icon path {
+  fill: var(--cactus-900);
+}
+
+.main-content {
+  grid-area: content;
+  height: 100%;
+  max-height: 970px;
+  max-width: 100%;
+  position: relative;
+  border: var(--cactus-900) 5px solid;
+  padding: 4rem;
+}
+
+.main-content > div {
+  height: 100%;
+}
+
+.card-menu {
+  grid-area: menu;
+  align-self: center;
+  justify-self: center;
+}
+
+.background {
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background path {
+  stroke: var(--cactus-900) !important;
+  opacity: 0.3;
+}
+
+.main-content-mobile {
+  display: flex;
+  flex-direction: column;
+}
+.content-move,
+.content-enter-active,
+.content-leave-active {
+  transition: all 0.3s ease;
+}
+
+.content-enter-from,
+.content-leave-to {
+  opacity: 0;
+}
+
+.content-leave-active {
+  position: relative;
+}

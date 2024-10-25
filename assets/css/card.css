@@ -1,0 +1,61 @@
+.card {
+  background: var(--cactus-50);
+  border-radius: 2px;
+  height: 450px;
+  width: 380px;
+  min-width: 300px;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--cactus-50);
+  background-color: var(--cactus-900);
+  padding: 0.5rem;
+}
+
+.card-image-section {
+  padding: 10px;
+}
+
+.card-image {
+  height: 150px;
+  width: 100%;
+}
+
+.card-divider {
+  border-bottom: 1px solid var(--cactus-200);
+  margin: 0 10px;
+}
+
+.card-section {
+  padding: 10px;
+}
+
+.card-tags-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 10px;
+}
+
+.card-tag {
+  background: var(--cactus-700);
+  color: var(--cactus-50);
+  padding: 0.2rem 0.5rem;
+}
+
+.pile-card {
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+
+.pile-card > .card {
+  position: absolute;
+}
+
+.card-area {
+  height: 100vh;
+}
