@@ -30,7 +30,9 @@ const writing = () => {
 }
 
 onMounted(() => {
-  writing()
+  setTimeout(() => {
+    writing()
+  }, 1500)
 })
 </script>
 
