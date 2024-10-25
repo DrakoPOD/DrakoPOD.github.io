@@ -11,7 +11,7 @@ const active = useState('view', () => 0)
           <About v-else-if="active == 1" />
           <Experience v-else-if="active == 2" />
           <Projects v-else-if="active == 3" />
-          <div v-else></div>
+          <More v-else />
         </Transition>
       </NuxtLayout>
     </div>

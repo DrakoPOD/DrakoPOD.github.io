@@ -20,7 +20,10 @@ const tags = ['Vue', 'Vite', 'TypeScript', 'TailwindCSS']
   <div class="card">
     <div class="card-title">{{ props.title }}</div>
     <div class="card-image-section">
-      <img class="card-image" src="https://picsum.photos/id/237/400/200" alt="an image">
+      <img v-if="props.imgUrl" class="card-image" :src="props.imgUrl" alt="an image">
+      <div v-else class="image-icon">
+        <Icon name="mdi:image-off" class="mdi-icon" />
+      </div>
     </div>
     <div class="card-divider"></div>
     <div class="card-section">{{ props.description }}</div>

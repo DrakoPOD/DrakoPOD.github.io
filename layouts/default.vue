@@ -8,5 +8,6 @@
     <div class="main-content">
       <slot></slot>
     </div>
+    <SVGBackground class="background" />
   </div>
 </template>

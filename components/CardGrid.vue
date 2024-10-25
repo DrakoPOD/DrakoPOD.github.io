@@ -14,6 +14,7 @@ interface DataCard {
   index?: number
   url?: string
   repo?: boolean
+  imgUrl?: string
 }
 
 interface Props {
@@ -67,7 +68,9 @@ const changeView = () => {
         </div>
         <div class="card-grid">
           <Card v-for="exp, i in container" :key="exp.title" :title="exp.title" :description="exp.description"
-            :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"></Card>
+            :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"
+            :imgUrl="exp.imgUrl" />
+
         </div>
 
       </div>
@@ -86,7 +89,8 @@ const changeView = () => {
         </div>
         <TransitionGroup name="pile" class="pile-card" tag="div">
           <Card v-for="exp, i in container" :key="exp.title" :title="exp.title" :description="exp.description"
-            :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"></Card>
+            :tags="exp.technologies" :top="exp.top" :left="exp.left" :zIndex="exp.zIndex" :index="i"
+            :imgUrl="exp.imgUrl" />
         </TransitionGroup>
 
       </div>

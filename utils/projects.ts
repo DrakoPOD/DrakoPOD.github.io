@@ -24,6 +24,7 @@ export default function () {
       title: 'IoT Dashboard',
       description: 'An application to visualize data from MQTT devices.',
       technologies: ['Vue', 'TypeScript'],
+      imgUrl: '/project-img/IoT-Dashboard.jpg',
     },
     {
       title: 'Task App',

@@ -5,6 +5,7 @@ export default function () {
       description:
         'I have experience in electronic maintenance working for a industrial company.',
       technologies: ['PLC', 'C++'],
+      imgUrl: '/experience-img/cementos-cibao.jpeg',
       year: 2014,
     },
     {
@@ -13,6 +14,7 @@ export default function () {
         'I have experience in developing web applications working for a startup company.',
       technologies: ['Vue', 'Tailwind', 'NodeJS', 'Git', 'Jira', 'Bitbucket'],
       year: 2023,
+      imgUrl: '/experience-img/Piensa.jpg',
     },
     {
       title: 'Programming and physics teacher',
